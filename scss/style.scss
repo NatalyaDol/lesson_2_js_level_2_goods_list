@@ -15,20 +15,22 @@ body {
         margin: 0 auto;
         height: 100%;
     }
+    main {
+        position: relative;
+    }
 }
 
 @import '_mixins';
 @import '_color';
-@import '_header';
+
 @import '_svg';
-@import '_header__burger_menu';
-@import '_carousel';
+
+
 @import '_product-card-section';
 @import '_product-card-details';
-@import '_delivery-section';
-@import '_photogalery_section';
-@import '_footer';
-@import '_part-between';
-@import '_modal-window';
+
+
+
+
 @import '_button';
 @import '_goods-list'

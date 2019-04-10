@@ -3,16 +3,17 @@ var goodsListSection = document.getElementById('goods-list-section');
 
 //Создаем класс для товара. //Creating the class for the product 
 class GoodsItem {
-    constructor (title, price) {
+    constructor (title, price, src) {
         this.title = title;
         this.price = price;
+        this.src = src;
     }
     //метод возвращает html-разметку отрисовка корзины. //Method for return the HTML tag. Paint the basket
     render () {
         return `<div class="goods-list__product-box">
         <span class="goods-list__product-box__name">${this.title}</span>
         <div class="goods-list__product-box__price">${this.price}</div>
-        
+        <img class="goods-list__product-box__img" src=${this.src} height="100px" alt="">
         <input type="submit" value="X" class="goods-list-item__product-box__delete" onclick="deleteProductStringBasket()">
         </div>`
     }
@@ -22,7 +23,7 @@ class GoodsItem {
 //Создаем класс для списка товаров GoodsList. //Creating the class for the GoodsList
 class GoodsList {
     constructor () {
-        this.name = 'Корзина';
+        
         this.goods = [];
     }
      //метод для заполнения списка goods. //Method to fill the goods
@@ -41,18 +42,12 @@ class GoodsList {
         let goodsList = document.getElementById('goods-list__product-box'); 
         
         this.goods.forEach (good => {
-            const goodItem = new GoodsItem (good.title, good.price);
+            const goodItem = new GoodsItem (good.title, good.price, good.src);
             listHtml += goodItem.render();
         });
         goodsList.innerHTML = listHtml;
     }
     
-    //Метод для вывода заголовка
-    addHeadline () {
-        let listHtml = 'Корзина';
-        let headLine = document.getElementById('goods-list_head-line'); 
-        headLine.innerText = listHtml;
-    }
 
     //Метод для вывода итоговой суммы корзины
     addTotalPrice () {
@@ -67,7 +62,6 @@ class GoodsList {
 
 var renderGoodsList = () => {
     const list =  new GoodsList ();
-    list.addHeadline();
     list.fetchGoods();
     list.render();
     list.addTotalPrice ();

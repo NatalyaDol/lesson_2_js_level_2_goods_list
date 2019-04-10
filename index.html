@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Basket</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="scss/style.css">
+    <!-- <link rel="stylesheet" href="scss/style.css"> -->
     
 </head>
 <body>
@@ -49,13 +49,19 @@
             </a>
         </section>
         
-        
     </main>
-    <section id="goods-list-section" class="goods-list">
-        <h3 id="goods-list_head-line"></h3>
-        <div id="goods-list__product-box"></div>
-        <p id="goods-list__total"></p>
-    </section>
+    
+    <div id="goods-list-section" class="goods-list">
+        <div id="goods-list-section__modal">
+            <input type="submit" value="X" class="goods-list-section__delete">
+            <h3 id="goods-list_head-line">Корзина</h3>
+            <div id="goods-list__product-box"></div>
+            <p id="goods-list__total"></p>
+        </div> 
+    </div>
+   
+    
+    
     <!-- <template class="template-goods-list">
         <div class="goods-list__product-box">
             <span class="goods-list__product-box__name">Товар</span>
