@@ -15,6 +15,11 @@
     display: none;
     @include h1_white;
 
+    h3,
+    p {
+        padding: 30px;
+    }
+
     .goods-list__product-box {
         display: flex;
         justify-content: space-around;

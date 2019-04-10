@@ -803,6 +803,11 @@ body button {
   font-weight: 400;
 }
 
+#goods-list-section h3,
+#goods-list-section p {
+  padding: 30px;
+}
+
 #goods-list-section .goods-list__product-box {
   display: -webkit-box;
   display: -ms-flexbox;
