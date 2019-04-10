@@ -17,7 +17,6 @@ class GoodsItem {
         <input type="submit" value="X" class="goods-list-item__product-box__delete" onclick="deleteProductStringBasket()">
         </div>`
     }
-    
 }
 
 //Создаем класс для списка товаров GoodsList. //Creating the class for the GoodsList
@@ -36,7 +35,40 @@ class GoodsList {
 
     // Метод вывод списка товаров. Для каждого элемента массива goods будем создавать экземпляр
     // класса GoodsItem и запрашивать его разметку
-    render () {
+    // render () {
+    //     let listHtml = '';
+    //     let goodsList = document.getElementById('goods-list__product-box'); 
+        
+    //     this.goods.forEach (good => {
+    //         const goodItem = new GoodsItem (good.title, good.price, good.src);
+    //         listHtml += goodItem.render();
+    //     });
+    //     goodsList.innerHTML = listHtml;
+    // }
+    
+}
+
+//Создаем класс корзина Cart
+class Cart {
+    constructor () {
+        this.goods = [];
+    }
+    //метод добавления товара в корзину
+    addCartItem(cartItem) {
+        this.goods.push(cartItem);
+    }
+
+    //Метод для вывода итоговой суммы корзины
+    totalCartPrice() {
+        let totalPrice = document.getElementById('goods-list__total'); 
+        let sum = 0;
+        this.goods.forEach (good => { 
+            sum += good.price
+        });
+        totalPrice.innerText = `Итого  ${sum} рублей`;
+    }
+
+    render() {
         let listHtml = '';
         let goodsList = document.getElementById('goods-list__product-box'); 
         
@@ -46,32 +78,21 @@ class GoodsList {
         });
         goodsList.innerHTML = listHtml;
     }
-    
-
-    //Метод для вывода итоговой суммы корзины
-    addTotalPrice () {
-        let totalPrice = document.getElementById('goods-list__total'); 
-        let sum = 0;
-        this.goods.forEach (good => { 
-            sum += good.price
-        });
-        totalPrice.innerText = `Итого  ${sum} рублей`;
-    }
 }
 
-// //Создаем класс корзина Cart
-// class Cart {
-//     constructor () {
-//         this.goods = [];
-//     }
-
-var renderGoodsList = () => {
+var renderCart = () => {
     const list =  new GoodsList ();
+    const cart = new Cart();
+
     list.fetchGoods();
-    list.render();
-    list.addTotalPrice ();
+    cart.addCartItem(list.goods[0]);
+    cart.addCartItem(list.goods[1]);
+    cart.addCartItem(list.goods[2]);
+    cart.render();
+
+    cart.totalCartPrice();
     goodsListSection.style.display = 'block';
 };
 
-btnBasket.addEventListener('click', renderGoodsList);
+btnBasket.addEventListener('click', renderCart);
 window.addEventListener('click', function (evt) {console.log(evt)});
