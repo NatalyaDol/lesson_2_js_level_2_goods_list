@@ -23,7 +23,6 @@ class GoodsItem {
 //Создаем класс для списка товаров GoodsList. //Creating the class for the GoodsList
 class GoodsList {
     constructor () {
-        
         this.goods = [];
     }
      //метод для заполнения списка goods. //Method to fill the goods
@@ -60,6 +59,12 @@ class GoodsList {
     }
 }
 
+// //Создаем класс корзина Cart
+// class Cart {
+//     constructor () {
+//         this.goods = [];
+//     }
+
 var renderGoodsList = () => {
     const list =  new GoodsList ();
     list.fetchGoods();
@@ -68,8 +73,5 @@ var renderGoodsList = () => {
     goodsListSection.style.display = 'block';
 };
 
-
-
 btnBasket.addEventListener('click', renderGoodsList);
-
 window.addEventListener('click', function (evt) {console.log(evt)});

@@ -263,6 +263,51 @@ body button {
   height: 1000px;
   top: 0;
   left: 0;
-  background: linear-gradient(10deg, rgba(127, 0, 82, 0.6), #250a1ce3);
+  background: linear-gradient(10deg, rgba(127, 0, 82, 0.6), #250a1cee);
+}
+
+#goods-list-section #goods-list-section__modal {
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 2rem;
+  position: absolute;
+  left: calc((100% - 80%)/2);
+  top: 100px;
+  z-index: 3;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: Raleway, Georgia, serif;
+  color: #800053;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+#goods-list-section #goods-list-section__modal h3,
+#goods-list-section #goods-list-section__modal p {
+  padding: 30px;
+  text-align: center;
+}
+
+#goods-list-section #goods-list-section__modal .goods-list__product-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(238, 233, 233, 0.644);
+}
+
+#goods-list-section #goods-list-section__modal .goods-list__product-box span {
+  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */
