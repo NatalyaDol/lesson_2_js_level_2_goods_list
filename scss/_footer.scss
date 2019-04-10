@@ -1,0 +1,16 @@
+
+.container {
+    footer a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        background: linear-gradient(10deg, rgba(127, 0, 82, 0.6), #250a1ce3);
+        
+        text-decoration: none;
+        @include font_menu_mobile;
+        svg {
+            fill-opacity: 0.8;
+        }
+    }
+}

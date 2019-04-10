@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+.carousel {
+    position: relative;
+    background-color: $color_main_transparent;
+   
+    .carousel__slides {
+        img {
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    color:$color_main_dark;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: $color_main_white_transparent;
+}
+
+@media only screen and (min-width: 590px) {
+    .carousel {
+        .carousel__slides {
+            img {
+                max-height: 600px;
+                width: auto;
+            }
+        }
+    }
+}
+
+
+
+
+

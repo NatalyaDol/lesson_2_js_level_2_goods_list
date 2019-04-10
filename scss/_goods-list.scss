@@ -1,0 +1,29 @@
+
+#goods-list-section {
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 30px;
+    background: linear-gradient(10deg, rgba(127, 0, 82, 0.6), #250a1ce3);
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 2rem;
+    // position: absolute;
+    // left: calc((100% - 80%)/2);
+    // top: 100px;
+    z-index: 2;
+    flex-direction: column;
+    display: none;
+    @include h1_white;
+
+    .goods-list__product-box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.644);
+
+        span {
+            width: 50%;
+        }
+    }
+}
